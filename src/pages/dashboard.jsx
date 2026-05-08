@@ -6,6 +6,10 @@ import {
   ShoppingBag,
   Users,
   AreaChart,
+  SlashSquare,
+  BarChartIcon,
+  Handbag,
+  Target,
 } from "lucide-react";
 import {
   ResponsiveContainer,
@@ -193,7 +197,7 @@ export default function Dashboard() {
                 style={{ backgroundColor: card.bg }}
               >
                 <div
-                  className="w-7 h-7 rounded-2 flex items-center justify-center mb-5"
+                  className="w-10 h-10 rounded-full flex items-center justify-center mb-5 p-2"
                   style={{ backgroundColor: card.iconBg }}
                 >
                   {card.icon}
@@ -222,7 +226,6 @@ export default function Dashboard() {
                 data={visitorData}
                 margin={{ top: 8, right: 8, left: -18, bottom: 0 }}
               >
-                <CartesianGrid vertical={false} stroke="#EEF2F7" />
                 <XAxis
                   dataKey="name"
                   tick={<AxisTick />}
@@ -321,50 +324,60 @@ export default function Dashboard() {
               </BarChart>
             </ResponsiveContainer>
           </div>
+          <div className="flex justify-center gap-6 mt-3 text-[11px] text-[#667085]">
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-[#2486be]" />
+              Online Sales
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-[#51c120]" />
+              Offline Sales
+            </div>
+          </div>
         </div>
 
         <div className="xl:col-span-4 bg-white rounded-[22px] border border-[#E6EAF2] shadow-[0_1px_2px_rgba(16,24,40,0.04)] p-4 xl:p-4">
-           <h2 className="text-[20px] font-bold text-[#151D48] mb-6">
-              Customer Satisfaction
-            </h2>
+          <h2 className="text-[20px] font-bold text-[#151D48] mb-6">
+            Customer Satisfaction
+          </h2>
 
-            <div className="h-55">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={satisfactionData}>
-                  <XAxis hide />
-                  <YAxis hide />
-                  <Tooltip />
+          <div className="h-55">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={satisfactionData}>
+                <XAxis hide />
+                <YAxis hide />
+                <Tooltip />
 
-                  <Line
-                    type="monotone"
-                    dataKey="last"
-                    stroke="#0095FF"
-                    strokeWidth={3}
-                    dot={false}
-                  />
+                <Line
+                  type="monotone"
+                  dataKey="last"
+                  stroke="#0095FF"
+                  strokeWidth={3}
+                  dot={false}
+                />
 
-                  <Line
-                    type="monotone"
-                    dataKey="thisMonth"
-                    stroke="#00E096"
-                    strokeWidth={3}
-                    dot={false}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
+                <Line
+                  type="monotone"
+                  dataKey="thisMonth"
+                  stroke="#00E096"
+                  strokeWidth={3}
+                  dot={false}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+
+          <div className="flex justify-center gap-2">
+            <div>
+              <p className="text-gray-600 text-sm">Last Month</p>
+              <h3 className="font-bold text-[#151D48] text-xl">$3,004</h3>
             </div>
-
-            <div className="flex justify-between mt-5">
-              <div>
-                <p className="text-[#A3AED0] text-sm">Last Month</p>
-                <h3 className="font-bold text-[#151D48] text-xl">$3,004</h3>
-              </div>
-
-              <div>
-                <p className="text-[#A3AED0] text-sm">This Month</p>
-                <h3 className="font-bold text-[#151D48] text-xl">$4,504</h3>
-              </div>
+            <div className="block w-px h-5 bg-gray-300 mx-4" />
+            <div>
+              <p className="text-gray-600 text-sm">This Month</p>
+              <h3 className="font-bold text-[#151D48] text-xl">$4,504</h3>
             </div>
+          </div>
         </div>
 
         <div className="xl:col-span-3 bg-white rounded-[22px] border border-[#E6EAF2] shadow-[0_1px_2px_rgba(16,24,40,0.04)] p-4 xl:p-4">
@@ -403,22 +416,36 @@ export default function Dashboard() {
           </div>
           <div className="mt-3 space-y-2.5">
             <div className="bg-[#F9FAFB] rounded-xl px-3 py-3 flex items-center justify-between">
-              <div>
-                <p className="text-[11px] text-[#98A2B3]">Reality Sales</p>
+              <div className="flex justify-between w-full">
+                <div className="flex items-center gap-2">
+                  <div className="flex bg-green-100 rounded-md p-2">
+                    <Handbag className="w-3.5 h-3.5 text-[#18D6A5]" />
+                  </div>
+                  <p className="text-sm font-semibold text-[#101828]">
+                    Reality Sales
+                  </p>
+                </div>
+
                 <h4 className="text-[13px] leading-4 font-bold text-[#101828] mt-1">
                   8,823
                 </h4>
               </div>
-              <div className="w-7 h-7 rounded-xl bg-[#E7FFF4]" />
             </div>
-            <div className="bg-[#F9FAFB] rounded-xl px-3 py-3 flex items-center justify-between">
-              <div>
-                <p className="text-[11px] text-[#98A2B3]">Target Sales</p>
+            <div className="bg-[#F9FAFB] rounded-xl px-3 flex items-center justify-between">
+              <div className="flex justify-between w-full">
+                <div className="flex item-center gap-2">
+                  <div className="flex bg-yellow-100 rounded-md p-2">
+                    <Target className="w-3.5 h-3.5 text-[#cbb92d]" />
+                  </div>
+                  <p className="text-sm font-semibold text-[#101828]">
+                    Target Sales
+                  </p>
+                </div>
+
                 <h4 className="text-[13px] leading-4 font-bold text-[#101828] mt-1">
                   12,122
                 </h4>
               </div>
-              <div className="w-7 h-7 rounded-xl bg-[#FFF8DD]" />
             </div>
           </div>
         </div>
@@ -545,9 +572,7 @@ export default function Dashboard() {
             <div>
               <div className="w-2.5 h-2.5 rounded-full bg-[#1D9BF0] mx-auto mb-1.5" />
               <p className="text-[11px] text-[#98A2B3]">Volume</p>
-              <h4 className="text-[12px] font-bold text-[#101828]">
-                1,135
-              </h4>
+              <h4 className="text-[12px] font-bold text-[#101828]">1,135</h4>
             </div>
             <div>
               <div className="w-2.5 h-2.5 rounded-full bg-[#18D6A5] mx-auto mb-1.5" />
