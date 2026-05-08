@@ -1,18 +1,50 @@
-# Aforro Dashboard - Sales Analytics Application
+# Aforro Assignment - Dashboard
 
-A modern React-based sales dashboard with API integration and data management capabilities. Features a clean, intuitive UI with real-time data visualization and user management.
+A modern, responsive dashboard application built with React, Vite, and TailwindCSS. This project displays sales metrics, analytics, and key performance indicators with an intuitive user interface.
 
-## Project Setup
+## Features
 
-### Prerequisites
-- Node.js (v18 or higher)
-- npm or yarn
+- **Dashboard Overview**: Real-time sales metrics and KPIs
+  - Total Sales tracking
+  - Total Orders count
+  - Product Sales data
+  - User analytics
+- **Interactive Charts**: Data visualization using Recharts
+- **Responsive Layout**: Mobile-friendly design with fixed sidebar and navbar
+- **Modern UI**: Built with TailwindCSS and Lucide React icons
+- **Fast Development**: Powered by Vite for instant HMR and optimized builds
 
-### Installation
+## Tech Stack
+
+- **Frontend Framework**: React 19.2
+- **Build Tool**: Vite 8.0
+- **Styling**: TailwindCSS 4.2 with Vite plugin
+- **Routing**: React Router DOM 7.15
+- **Data Visualization**: Recharts 3.8
+- **Icons**: Lucide React 1.3
+- **Code Quality**: ESLint 10.2
+
+## Project Structure
+
+```
+src/
+├── App.jsx              # Main application component with routing
+├── main.jsx             # Entry point
+├── index.css            # Global styles
+├── components/
+│   ├── Layout.jsx       # Main layout with sidebar and navbar
+│   ├── Navbar.jsx       # Top navigation bar
+│   └── Sidebar.jsx      # Side navigation menu
+├── pages/
+│   └── dashboard.jsx    # Dashboard page with metrics and charts
+└── assets/              # Static assets
+```
+
+## Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/Aforro-Assignment.git
+   git clone <repository-url>
    cd Aforro-Assignment
    ```
 
@@ -21,83 +53,77 @@ A modern React-based sales dashboard with API integration and data management ca
    npm install
    ```
 
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-   The application will be available at `http://localhost:5174`
+## Usage
 
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
+### Development Server
 
-## Features Implemented
+Start the development server with hot module replacement:
 
-### Part 1: UI Implementation
-- **Dashboard Layout**: Professional sales dashboard with sidebar navigation
-- **Header Section**: Search functionality and user profile display
-- **Metrics Cards**: Display key metrics (Total Sales, Total Orders, Product Sold, New Customers)
-- **Charts Section**: 
-  - Bar chart for Total Revenue by day
-  - Line chart for Customer Satisfaction trends
-  - Grouped bar chart for Target vs Reality comparison
-  - Map visualization for Sales by Country
-- **Responsive Design**: Mobile-first approach with breakpoints for tablets and desktops
-- **Modern Styling**: Clean, professional look with purple gradient theme
-
-### Part 2: API Integration & Data Table
-- **User Data Fetching**: Fetch from JSONPlaceholder API (`https://jsonplaceholder.typicode.com/users`)
-- **Data Table**: Display users with columns:
-  - Name
-  - Email
-  - Company Name
-  - City
-- **Search Functionality**: 
-  - Search by name or email in real-time
-- **Sorting**:
-  - Click on "Name" column header to toggle A-Z and Z-A sorting
-  - Visual indicator (↑/↓) shows current sort order
-- **Filtering**:
-  - Filter users by city using dropdown selector
-  - "All Cities" option to view all users
-- **State Management**:
-  - Loading state display while fetching data
-  - Error handling for failed API requests
-  - "No results" message when filters return empty
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── Sidebar.jsx          # Navigation sidebar
-│   ├── Header.jsx           # Top header with search and profile
-│   ├── MetricsCard.jsx      # Reusable metric card component
-│   ├── Charts.jsx           # Dashboard charts visualization
-│   └── UsersTable.jsx       # User data table with features
-├── App.jsx                  # Main app component
-├── App.css                  # Global and component styles
-├── main.jsx                 # React entry point
-└── index.css                # Base styles
+```bash
+npm run dev
 ```
 
-## Technology Stack
+The application will be available at `http://localhost:5173` (or another available port).
 
-- **React 19** - UI framework
-- **Vite** - Build tool and dev server
-- **Fetch API** - Data fetching
-- **CSS3** - Styling with flexbox and grid
-- **ES6+** - Modern JavaScript
+### Build for Production
 
-## Assumptions
+Create an optimized production build:
 
-1. **Mock Data**: Metrics data (Total Sales, Orders, etc.) are hardcoded for demonstration
-2. **API**: Assumes JSONPlaceholder API is publicly accessible and stable
-3. **Styling**: Uses vanilla CSS instead of frameworks (Tailwind/Bootstrap) for minimal dependencies
-4. **Chart Visualization**: Charts are simplified representations using CSS and basic HTML elements
-5. **Responsive Design**: Tested on modern browsers; IE not supported
-6. **User Information**: Displays all 10 users from the API without pagination
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory.
+
+### Preview Production Build
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+### Linting
+
+Check code quality with ESLint:
+
+```bash
+npm run lint
+```
+
+## Configuration Files
+
+- **vite.config.js**: Vite configuration with React plugin
+- **tailwind.config.js**: TailwindCSS customization
+- **eslint.config.js**: ESLint rules for code quality
+- **package.json**: Project dependencies and scripts
+
+## Components
+
+### Layout
+The main layout wrapper that includes:
+- Fixed sidebar navigation
+- Fixed top navbar
+- Main content area with page outlet
+
+### Dashboard
+The main dashboard page featuring:
+- Sales metrics cards
+- Order statistics
+- Product sales information
+- User analytics
+- Interactive charts for data visualization
+
+## Getting Started
+
+1. Install dependencies: `npm install`
+2. Start development server: `npm run dev`
+3. Open `http://localhost:5173` in your browser
+4. Begin developing with hot module replacement enabled
+
+## License
+
+This project is part of the Aforro Assignment.
 
 ## Available Scripts
 
