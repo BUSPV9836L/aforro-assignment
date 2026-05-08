@@ -1,26 +1,4 @@
-import {
-  LayoutDashboard,
-  Trophy,
-  ShoppingCart,
-  Package,
-  BarChart3,
-  MessageSquare,
-  Settings,
-  LogOut,
-  Bell,
-  ChevronDown,
-  Menu,
-  Search,
-  TrendingUp,
-  TrendingDown,
-  Users,
-  Globe,
-  Target,
-  ShoppingBag,
-  DollarSign,
-  MapPin,
-  Star,
-} from "lucide-react";
+import { Bell, ChevronDown, Menu, Search } from "lucide-react";
 export default function Navbar({ page_name }) {
   return (
     <nav className="bg-white px-4 sm:px-6 lg:px-8 xl:px-10 py-4 xl:py-5 border-b border-gray-100">
