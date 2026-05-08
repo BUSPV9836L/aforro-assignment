@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import Dashboard from "./pages/dashboard.jsx";
+import UsersTable from "./pages/users-table.jsx";
 
 export default function App() {
 
@@ -13,6 +14,10 @@ export default function App() {
           path: "/",
           element: <Dashboard />,
         },
+        {
+          path: "/users",
+          element: <UsersTable />,
+        }
       ],
     },
   ]);

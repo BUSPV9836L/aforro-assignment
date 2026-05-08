@@ -1,13 +1,9 @@
-import React from "react";
 import {
   Upload,
   ChartNoAxesCombined,
   DollarSign,
   ShoppingBag,
   Users,
-  AreaChart,
-  SlashSquare,
-  BarChartIcon,
   Handbag,
   Target,
 } from "lucide-react";
@@ -21,7 +17,6 @@ import {
   Tooltip,
   BarChart,
   Bar,
-  Area,
 } from "recharts";
 
 const salesCards = [

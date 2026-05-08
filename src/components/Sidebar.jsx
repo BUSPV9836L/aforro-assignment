@@ -7,19 +7,6 @@ import {
   MessageSquare,
   Settings,
   LogOut,
-  Bell,
-  ChevronDown,
-  Menu,
-  Search,
-  TrendingUp,
-  TrendingDown,
-  Users,
-  Globe,
-  Target,
-  ShoppingBag,
-  DollarSign,
-  MapPin,
-  Star,
 } from "lucide-react";
 
 export default function Sidebar() {
